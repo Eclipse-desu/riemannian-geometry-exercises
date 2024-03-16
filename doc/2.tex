@@ -1,0 +1,63 @@
+\subsection{2.5.1}
+\begin{problem}
+    证明: 欧氏空间的联络是唯一满足对任意常向量场 $X$ 都有 $\nabla X = 0$ 的仿射联络.
+\end{problem}
+\begin{solution}
+    回顾定义, 仿射联络满足
+    \begin{flalign*}
+        % \begin{cases}
+        & \Div{\alpha v + \beta w}{X} = \alpha\Div{v}{X} + \beta\Div{w}{X} & \\
+        & \Div{X}{\alpha v + w} = X(\alpha)v + \alpha \Div{X}{v} + \Div{X}{w}. &
+    \end{flalign*}
+    ``$\Rightarrow$'': 欧氏空间上的联络同时还是黎曼联络, 联络系数 $\Gamma^{i}_{jk} = 0$. 所以对常向量场 $X = X^ie_i$, 其中 $X^i$ 都是常数, 以及对任意 $Y \in \VecFld(\mathbb{R}^n)$,
+    \[
+        \nabla X(Y) = \Div{Y}{X} = Y(X^i)e_i = 0. 
+    \]
+    ``$\Leftarrow$'': 取欧氏空间的某联络 $\nabla$, 若其对任何常向量场 $X = X^ie_i$, $\nabla X = 0$, 则任取 $Y \in \VecFld(\mathbb{R}^n)$,
+    \[
+        0 = (\nabla X){Y} = \Div{Y}{X} = Y(X^i)e_i + X^j\Div{Y}{e_j} = X^j\Div{Y}{e_j},
+    \]
+    即, 对任何 $j$, $\Div{Y}{e_j} = 0$. 所以联络系数 $\Gamma^{i}_{jk} = \omega^{i}(\Div{e_j}{e_k}) = 0$. 所以, 这个联络就是欧氏空间的默认联络.
+\end{solution}
+
+\subsection{\textcolor{red}{2.5.2}}
+\begin{problem}
+    证明: 对 $C^1$ 向量场, 反对称性 $[X, Y] = -[Y, X]$ 不一定成立; Jacobi 恒等式对 $C^2$ 向量场成立.
+\end{problem}
+\begin{solution}
+    不太理解第一部分. 如果这里 $[X, Y]$ 指 Lie 括号, 那么即使对 $C^1$ 向量场, 这也是成立的. 因此此题搁置.
+\end{solution}
+
+\subsection{2.5.3}
+\begin{problem}
+    证明挠率张量 $T(X, Y) = \Div{X}{Y} - \Div{Y}{X} - [X, Y]$ 是 $(2, 1)$ 型张量.
+\end{problem}
+\begin{solution}
+    \[
+        \begin{aligned}
+            T(fX_1 + X_2, Y) =& \Div{fX_1 + X_2}{Y} - \Div{Y}{fX_1 + X_2} - [fX_1 + X_2, Y] \\
+            &= {\cHONG f\Div{X_1}{Y}} + {\cLAN \Div{X_2}{Y}} - Y(f)X_1 - {\cHONG f\Div{Y}{X_1}} - {\cLAN \Div{Y}{X_2}} + Y(f)X_1 - {\cHONG f[X_1, Y]} - {\cLAN [X_2, Y]} \\
+            &= {\cHONG fT(X_1, Y)} + {\cLAN T(X_2, Y)}. 
+        \end{aligned}
+    \]
+\end{solution}
+
+\subsection{2.5.4}
+\begin{problem}
+    若 $c\colon I \rightarrow M$ 在 $t_0$ 速度非零, 则存在 $X$ 满足对所有 $t_0$ 附近的 $t$, $X|_{c(t)} = \dot{c}(t)$.
+\end{problem}
+\begin{solution}
+    利用秩定理, 取坐标使 $c(t) = (t, 0, \cdots, 0)$. 则定义 $X = (1, 0, \cdots, 0)$ 即可.
+\end{solution}
+
+\subsection{2.5.5}
+\begin{problem}
+    计算 $\diver(fX)$, $\Delta(fh)$, $\Hess(fg)$.
+\end{problem}
+\begin{solution}
+    1. $\diver(fX)$.
+    根据定义, $\diver(fX) = \Lie{fX}\vol$, 所以
+    \[
+        (\diver(fX)\vol)(v_1, \cdots, v_n) = \Lie{fX}(\vol(v_1, \cdots, v_n)) - \sum_{i = 1}^{n}\vol(v_1, \cdots, \Lie{fX}v_i, \cdots, v_n).
+    \]
+\end{solution}
